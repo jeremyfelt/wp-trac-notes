@@ -11,11 +11,19 @@
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
-* #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
 * #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 * #20793 [link](http://core.trac.wordpress.org/ticket/20793) - fix notice in wpmu_create_blog()
 
 ### Likely Close
+
+
+## Closed
+
+### Committed
+
+* #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
+
+### Not Committed
 
 * #20220 [link](http://core.trac.wordpress.org/ticket/20220) - add check for sunrise, basic commit or close
