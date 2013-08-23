@@ -20,6 +20,12 @@
 * #24061 [link](http://core.trac.wordpress.org/ticket/24061) - introduce blog-archived.php and blog-spam.php [Related #17164](http://core.trac.wordpress.org/ticket/17164)
 * #20825 [link](http://core.trac.wordpress.org/ticket/20825) - User activation in multisite should happen in the main blog
 * #17397 [link](http://core.trac.wordpress.org/ticket/17397) - Inconsistency in allowed site addresses
+* #12832 [link](http://core.trac.wordpress.org/ticket/12832) - Schema change for site status
+
+### Long Term / Refactor
+
+* #21143 [link](http://core.trac.wordpress.org/ticket/21143) - In which @nacin mentions rewriting ms-settings.php
+
 
 ## Closed
 
