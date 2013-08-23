@@ -4,12 +4,8 @@
 
 ### Likely Commit
 
-* #22160 [link](http://core.trac.wordpress.org/ticket/22160) - eTags in ms-files
-* #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
 * #19451 [link](http://core.trac.wordpress.org/ticket/19451) - add stage of signup to existing filter
-* #20854 [link](http://core.trac.wordpress.org/ticket/20854) - prevent notice by using absint()
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
-* #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
 * #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
@@ -17,13 +13,19 @@
 
 ### Likely Close
 
+### Discussion / Review
+
+* #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
 
 ## Closed
 
 ### Committed
 
 * #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
+* #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
 
 ### Not Committed
 
 * #20220 [link](http://core.trac.wordpress.org/ticket/20220) - add check for sunrise, basic commit or close
+* #22160 [link](http://core.trac.wordpress.org/ticket/22160) - eTags in ms-files
+* #20854 [link](http://core.trac.wordpress.org/ticket/20854) - prevent notice by using absint()
