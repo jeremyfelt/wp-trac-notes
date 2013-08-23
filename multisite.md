@@ -8,7 +8,6 @@
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
-* #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 * #20793 [link](http://core.trac.wordpress.org/ticket/20793) - fix notice in wpmu_create_blog()
 * #25046 [link](http://core.trac.wordpress.org/ticket/25046) - is_email_address_unsafe should be case insensitive
 
@@ -27,6 +26,7 @@
 
 * #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
 * #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
+* #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 
 ### Not Committed
 
