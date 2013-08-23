@@ -4,6 +4,7 @@
 
 ### Likely Commit
 
+* #25030 [link](http://core.trac.wordpress.org/ticket/25030) - add is_main_network()
 * #19451 [link](http://core.trac.wordpress.org/ticket/19451) - add stage of signup to existing filter
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
