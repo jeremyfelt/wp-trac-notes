@@ -14,18 +14,27 @@
 
 ### Likely Close
 
+* #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
+
 ### Discussion / Review
 
+* #21662 [link](http://core.trac.wordpress.org/ticket/21662) - filter signup text
 * #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
 * #24061 [link](http://core.trac.wordpress.org/ticket/24061) - introduce blog-archived.php and blog-spam.php [Related #17164](http://core.trac.wordpress.org/ticket/17164)
 * #20825 [link](http://core.trac.wordpress.org/ticket/20825) - User activation in multisite should happen in the main blog
 * #17397 [link](http://core.trac.wordpress.org/ticket/17397) - Inconsistency in allowed site addresses
 * #12832 [link](http://core.trac.wordpress.org/ticket/12832) - Schema change for site status
+* #23709 [link](http://core.trac.wordpress.org/ticket/23709) - populate_network() tweaks related to wildcards
+
+### Needs Work
+
+* #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
+	* #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
+* #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
 
 ### Long Term / Refactor
 
 * #21143 [link](http://core.trac.wordpress.org/ticket/21143) - In which @nacin mentions rewriting ms-settings.php
-
 
 ## Closed
 
