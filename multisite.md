@@ -14,6 +14,7 @@
 
 ### Likely Close
 
+* #20861 [link](http://core.trac.wordpress.org/ticket/20861) - accessing custom permastructs across sites
 * #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
 
 ### Discussion / Review
