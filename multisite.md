@@ -32,6 +32,7 @@
 * #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
 	* #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
 * #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
+* #15706 [link](http://core.trac.wordpress.org/ticket/15706) - Allow wildcarded domains in multisite limited email domains
 
 ### Long Term / Refactor
 
