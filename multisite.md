@@ -45,6 +45,7 @@
 * #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
 * #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 * #20793 [link](http://core.trac.wordpress.org/ticket/20793) - fix notice in wpmu_create_blog()
+* #21674 [link](http://core.trac.wordpress.org/ticket/21674) - Add Themes and Plugins to network admin
 
 ### Not Committed
 
