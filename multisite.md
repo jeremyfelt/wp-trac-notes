@@ -4,7 +4,6 @@
 
 ### Likely Commit
 
-* #25030 [link](http://core.trac.wordpress.org/ticket/25030) - add is_main_network()
 * #19451 [link](http://core.trac.wordpress.org/ticket/19451) - add stage of signup to existing filter
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
@@ -14,11 +13,10 @@
 ### Likely Close
 
 * #20861 [link](http://core.trac.wordpress.org/ticket/20861) - accessing custom permastructs across sites
-* #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
 
 ### Discussion / Review
 
-* #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
+* #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
 * #13554 [link](http://core.trac.wordpress.org/ticket/13554) - weird canonical redirects in MS
 * #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
 * #24061 [link](http://core.trac.wordpress.org/ticket/24061) - introduce blog-archived.php and blog-spam.php [Related #17164](http://core.trac.wordpress.org/ticket/17164)
@@ -44,15 +42,17 @@
 
 ### Committed
 
+* #25030 [link](http://core.trac.wordpress.org/ticket/25030) - add is_main_network()
 * #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
 * #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
 * #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 * #20793 [link](http://core.trac.wordpress.org/ticket/20793) - fix notice in wpmu_create_blog()
 * #21674 [link](http://core.trac.wordpress.org/ticket/21674) - Add Themes and Plugins to network admin
 
-### Not Committed
+### Closed
 
 * #20220 [link](http://core.trac.wordpress.org/ticket/20220) - add check for sunrise, basic commit or close
 * #22160 [link](http://core.trac.wordpress.org/ticket/22160) - eTags in ms-files
 * #20854 [link](http://core.trac.wordpress.org/ticket/20854) - prevent notice by using absint()
 * #21662 [link](http://core.trac.wordpress.org/ticket/21662) - filter signup text
+* #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
