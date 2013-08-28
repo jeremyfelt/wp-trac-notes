@@ -18,6 +18,8 @@
 
 ### Discussion / Review
 
+* #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
+* #13554 [link](http://core.trac.wordpress.org/ticket/13554) - weird canonical redirects in MS
 * #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
 * #24061 [link](http://core.trac.wordpress.org/ticket/24061) - introduce blog-archived.php and blog-spam.php [Related #17164](http://core.trac.wordpress.org/ticket/17164)
 * #20825 [link](http://core.trac.wordpress.org/ticket/20825) - User activation in multisite should happen in the main blog
@@ -27,6 +29,7 @@
 
 ### Needs Work
 
+* #14511 [link](http://core.trac.wordpress.org/ticket/14511) - wp_get_sites()
 * #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
 	* #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
 * #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
