@@ -42,6 +42,7 @@
 
 ### Committed
 
+* #25182 [link](http://core.trac.wordpress.org/ticket/25182) - avoid validating wildcard DNS every time
 * #25030 [link](http://core.trac.wordpress.org/ticket/25030) - add is_main_network()
 * #23650 [link](http://core.trac.wordpress.org/ticket/23650) - make get_space_allowed filterable
 * #19753 [link](http://core.trac.wordpress.org/ticket/19753) - show network name in network admin page titles
