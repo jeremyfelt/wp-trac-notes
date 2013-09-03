@@ -8,7 +8,6 @@
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
-* #25046 [link](http://core.trac.wordpress.org/ticket/25046) - is_email_address_unsafe should be case insensitive
 
 ### Likely Close
 
@@ -28,8 +27,7 @@
 ### Needs Work
 
 * #14511 [link](http://core.trac.wordpress.org/ticket/14511) - wp_get_sites()
-* #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
-	* #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
+* #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
 * #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
 * #15706 [link](http://core.trac.wordpress.org/ticket/15706) - Allow wildcarded domains in multisite limited email domains
 
@@ -49,6 +47,7 @@
 * #18186 [link](http://core.trac.wordpress.org/ticket/18186) - default to 'none' for the registration site option
 * #20793 [link](http://core.trac.wordpress.org/ticket/20793) - fix notice in wpmu_create_blog()
 * #21674 [link](http://core.trac.wordpress.org/ticket/21674) - Add Themes and Plugins to network admin
+* #25046 [link](http://core.trac.wordpress.org/ticket/25046) - is_email_address_unsafe should be case insensitive
 
 ### Closed
 
@@ -57,3 +56,5 @@
 * #20854 [link](http://core.trac.wordpress.org/ticket/20854) - prevent notice by using absint()
 * #21662 [link](http://core.trac.wordpress.org/ticket/21662) - filter signup text
 * #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
+* #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
+
