@@ -12,9 +12,12 @@
 ### Likely Close
 
 * #20861 [link](http://core.trac.wordpress.org/ticket/20861) - accessing custom permastructs across sites
+* #21306 [link](http://core.trac.wordpress.org/ticket/21306) - 403 vs 404 vs 410 for archived sites
+* #18117 [link](http://core.trac.wordpress.org/ticket/18117) - slash on site-info.php path
 
 ### Discussion / Review
 
+* #21573 [link](http://core.trac.wordpress.org/ticket/21573) - NOBLOGREDIRECT
 * #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
 * #13554 [link](http://core.trac.wordpress.org/ticket/13554) - weird canonical redirects in MS
 * #24434 [link](http://core.trac.wordpress.org/ticket/24434) - add mp4 as a default allowed filetype
@@ -28,6 +31,7 @@
 
 * #14511 [link](http://core.trac.wordpress.org/ticket/14511) - wp_get_sites()
 * #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
+	* #24585 [link](http://core.trac.wordpress.org/ticket/24585) - Category links 404 (closed as duplicate of 20171)
 * #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
 * #15706 [link](http://core.trac.wordpress.org/ticket/15706) - Allow wildcarded domains in multisite limited email domains
 
@@ -57,4 +61,4 @@
 * #21662 [link](http://core.trac.wordpress.org/ticket/21662) - filter signup text
 * #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
 * #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
-
+* #11113 [link](http://core.trac.wordpress.org/ticket/11113) - return 410 for deleted posts
