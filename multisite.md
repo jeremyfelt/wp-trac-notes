@@ -12,7 +12,6 @@
 ### Likely Close
 
 * #20861 [link](http://core.trac.wordpress.org/ticket/20861) - accessing custom permastructs across sites
-* #21306 [link](http://core.trac.wordpress.org/ticket/21306) - 403 vs 404 vs 410 for archived sites
 * #18117 [link](http://core.trac.wordpress.org/ticket/18117) - slash on site-info.php path
 
 ### Discussion / Review
@@ -62,3 +61,5 @@
 * #14988 [link](http://core.trac.wordpress.org/ticket/14988) - filter for add new form
 * #16201 [link](http://core.trac.wordpress.org/ticket/16201) - when updating a multisite blog subblogs getting 404 error
 * #11113 [link](http://core.trac.wordpress.org/ticket/11113) - return 410 for deleted posts
+* #21306 [link](http://core.trac.wordpress.org/ticket/21306) - 403 vs 404 vs 410 for archived sites
+
