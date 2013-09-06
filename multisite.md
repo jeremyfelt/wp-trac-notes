@@ -5,16 +5,14 @@
 ### Likely Commit
 
 * #17630 [link](http://core.trac.wordpress.org/ticket/17630) - Redirect when expected on wp-signup.php
-* #18242 [link](http://core.trac.wordpress.org/ticket/18242) - Bad DB values after changing subfolder MS site's domain
+* #18117 [link](http://core.trac.wordpress.org/ticket/18117) - slash on site-info.php path
 * #19451 [link](http://core.trac.wordpress.org/ticket/19451) - add stage of signup to existing filter
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
 * #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
-* #25235 [link](http://core.trac.wordpress.org/ticket/25235) - deprecate get_blogaddress_by_domain()
 
 ### Likely Close
 
-* #18117 [link](http://core.trac.wordpress.org/ticket/18117) - slash on site-info.php path
 * #20861 [link](http://core.trac.wordpress.org/ticket/20861) - accessing custom permastructs across sites
 
 ### Discussion / Review
