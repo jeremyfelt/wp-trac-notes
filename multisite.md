@@ -22,6 +22,7 @@
 * #16293 [link](http://core.trac.wordpress.org/ticket/16293) - Users with ID 1/2 cannot be deleted
 * #17376 [link](http://core.trac.wordpress.org/ticket/17376) - Multisite subfolders and wp-admin issues
 * #17397 [link](http://core.trac.wordpress.org/ticket/17397) - Inconsistency in allowed site addresses
+* #17904 [link](http://core.trac.wordpress.org/ticket/17904) - Multisite has more restrictions on user login character set
 * #19879 [link](http://core.trac.wordpress.org/ticket/19879) - better caching for get_dirsize()
 * #20825 [link](http://core.trac.wordpress.org/ticket/20825) - User activation in multisite should happen in the main blog
 * #21573 [link](http://core.trac.wordpress.org/ticket/21573) - NOBLOGREDIRECT
