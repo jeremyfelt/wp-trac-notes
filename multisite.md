@@ -9,7 +9,6 @@
 * #19451 [link](http://core.trac.wordpress.org/ticket/19451) - add stage of signup to existing filter
 * #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #20651 [link](http://core.trac.wordpress.org/ticket/20651) - pre-deletion hook for site options
-* #25020 [link](http://core.trac.wordpress.org/ticket/25020) - sitemeta filter in populate_network()
 
 ### Likely Close
 
@@ -17,7 +16,6 @@
 
 ### Discussion / Review
 
-* #12832 [link](http://core.trac.wordpress.org/ticket/12832) - Schema change for site status
 * #13554 [link](http://core.trac.wordpress.org/ticket/13554) - weird canonical redirects in MS
 * #16293 [link](http://core.trac.wordpress.org/ticket/16293) - Users with ID 1/2 cannot be deleted
 * #17376 [link](http://core.trac.wordpress.org/ticket/17376) - Multisite subfolders and wp-admin issues
