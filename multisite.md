@@ -43,6 +43,7 @@
 
 ### Long Term / Refactor
 
+* #12002 [link](http://core.trac.wordpress.org/ticket/12002) - Collision detection with main site prefix
 * #17948 [link](http://core.trac.wordpress.org/ticket/17948) - refactor login/registration
 	* #20075 [link](http://core.trac.wordpress.org/ticket/20075) - add hooks to wp-activate
 * #21143 [link](http://core.trac.wordpress.org/ticket/21143) - In which @nacin mentions rewriting ms-settings.php
