@@ -6,6 +6,10 @@
 
 ### Likely Close
 
+### Punted from 3.8
+
+* #23197 [link](http://core.trac.wordpress.org/ticket/23197) - Load plugins during wp-activate.php
+
 ### Discussion / Review
 
 * #17630 [link](http://core.trac.wordpress.org/ticket/17630) - Redirect when expected on wp-signup.php
