@@ -23,6 +23,7 @@
 * #21352 [link](http://core.trac.wordpress.org/ticket/21352) - wp_lostpassword_url() tweaks
 * #21573 [link](http://core.trac.wordpress.org/ticket/21573) - NOBLOGREDIRECT
 * #22277 [link](http://core.trac.wordpress.org/ticket/22277) - Admin add user without confirmation email
+* #26317 [link](http://core.trac.wordpress.org/ticket/26317) - Filter new site notification email
 
 ### Punted from 3.8, review in 3.9
 
