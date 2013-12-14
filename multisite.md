@@ -11,6 +11,7 @@
 ### Likely Close
 
 * #20825 [link](http://core.trac.wordpress.org/ticket/20825) - User activation in multisite should happen in the main blog
+* #25901 [link](http://core.trac.wordpress.org/ticket/25901) - Redirect after activation not working.
 
 ### Early 3.9
 
