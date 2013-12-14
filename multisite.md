@@ -7,6 +7,7 @@
 * #20171 [link](http://core.trac.wordpress.org/ticket/20171) - Categories, tag links broken multisite subfolder install
 * #25478 [link](http://core.trac.wordpress.org/ticket/25478) - Add style class to wp-activate and wp-signup
 * #25584 [link](http://core.trac.wordpress.org/ticket/25584) - Add action to `wpmu_delete_blog()`
+* #25328 [link](http://core.trac.wordpress.org/ticket/25328) - Docs for `switch_to_blog()` returning true.
 
 ### Likely Close
 
