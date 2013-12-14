@@ -26,6 +26,7 @@
 * #21573 [link](http://core.trac.wordpress.org/ticket/21573) - NOBLOGREDIRECT
 * #22277 [link](http://core.trac.wordpress.org/ticket/22277) - Admin add user without confirmation email
 * #26317 [link](http://core.trac.wordpress.org/ticket/26317) - Filter new site notification email
+* #26403 [link](http://core.trac.wordpress.org/ticket/26403) - `strtolower( $path )` in ms-settings
 
 ### Punted from 3.8, review in 3.9
 
