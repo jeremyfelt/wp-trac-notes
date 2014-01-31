@@ -229,7 +229,7 @@ We continue.
 		* if `'%siteurl%' == $destination`
 			* `$destination = "http://" . $current_site->domain . $current_site->path;`
 	* else
-		* $destination = 'http://' . $current_site->domain . $current_site->path . 'wp-signup.php?new=' . str_replace( '.' . $current_site->domain, '', $domain );
+		* `$destination = 'http://' . $current_site->domain . $current_site->path . 'wp-signup.php?new=' . str_replace( '.' . $current_site->domain, '', $domain );`
 	* redirect to `$destination`
 
 If we haven't found a site yet, and this is a subdomain install, *and* we're not going through installation, we decide to redirect the request. If a `NOBLOGREDIRECT` destination has been defined in `wp-config.php`, we route it there. If one is not defined, we route to the current network's signup location on the primary site.
