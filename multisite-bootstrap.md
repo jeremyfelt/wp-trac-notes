@@ -47,7 +47,7 @@ Multisite bootstrap begins here, continuing under the load of `ABSPATH . wp-sett
 		* `WP_CONTENT_DIR . /sunrise.php`
 	* `ms_subdomain_constants()`, un-conflicts `SUBDOMAIN_INSTALL` and `VHOST`
 
-Much of the following sections is skipped if `$current_site` and `$current_blog` are setup properly by `sunrise.php`.
+Most of this process is skipped if `$current_site` and `$current_blog` are setup properly by `sunrise.php`.
 
 * if `! isset $current_site || ! isset $current_blog`
 	* `$domain = SERVER['HTTP_HOST']`
@@ -55,10 +55,12 @@ Much of the following sections is skipped if `$current_site` and `$current_blog`
 	* `$domain`= rtrim .
 	* `$cookie_domain = $domain`
 	* `$cookie_domain = strip www.`
-	* `$path = SERVER['REQUEST_URI']` | preg_replace php
+	* `$path = SERVER['REQUEST_URI']` | preg_replace to remove .php (check)
 	* `$path` = str_replace wp-admin
 	* `$path` = preg_replace after first /path/ entry of URI
 	* `$current_site = wpmu_current_site()`
+
+In this first block, we try to capture the intended domain and path so that we can match them with a network and a site. If a port number is attached to the domain, we strip it out. Of course, if the port is non "standard", we report an error. We strip any `www` so that we can set the cookie domain properly. We remove any `wp-admin` instances. We capture only the first `/path/` for the network lookup.
 
 ## Finding the Network
 
@@ -109,7 +111,7 @@ In the rare case that more than one network exists, we continue.
 
 * `$path` = first `/path/` of `$_SERVER['REQUEST_URI']`
 
-The `$path` is captured as the first subfolder of the requested path. This means we can only support networks that are one folder deep in core directly.
+The `$path` is captured as the first subfolder of the requested path. This means we can only support networks that are one folder deep in core directly. It seems strange that we do this (?), because `$path` has already been parsed beforehand. Seems like a duplication of efforts in one place or the other.
 
 * if `$domain == $cookie_domain`
 	* `$current_site = $wpdb->site WHERE domain = $domain AND path = $path`
@@ -133,7 +135,10 @@ In the above, we look for a network that uses `/` as the root path, matching onl
 	* `$current_site->cookie_domain = $cookie_domain`
 	* `return`
 
-If one is found using this method, we probably can assume it's a subfolder multisite install. We've matched a domain to the network, we've assigned the `$path` global correctly as such. We've setup the expected cookie domain, and we're ready to go find the individual site.
+If one is found using this method, we probably can assume it's a subfolder multisite install. We've matched a domain to the network, we've assigned the `$path` global correctly as such. We've setup the expected cookie domain, and we're ready to go find the individual site. A match here indicates a structure such as:
+
+* `http://network.com/site1/`
+* `http://network.com/site2/`
 
 If nothing has shown up yet, then we move into subdomain territory.
 
@@ -165,7 +170,7 @@ And if we can't find a network with the requested information, we die with an er
 
 * `wp_die()`
 
-## Finding the SiteI
+## Finding the Site
 
 And `$current_site` has been established through `wpmu_current_site()`. Time to figure out `$current_blog`.
 
