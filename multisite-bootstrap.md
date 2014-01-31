@@ -2,46 +2,45 @@
 
 Standard bootstrap process
 
- /index.php
- require . /wp-blog-header.php
-	require . /wp-load.php
-		define ABSPATH
-		require ABSPATH . wp-config.php | or one dir up
-			define DB, MULTISITE, SUBDOMAIN_INSTALL, 
-			require ABSPATH . wp-settings.php
-				define WPINC | wp-includes
-				require ABSPATH . WPINC . /load.php | loads functions
-				require ABSPATH . WPINC . /default-constants.php | loads functions
-				global $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version
-				require ABSPATH . WPINC . /version.php
-					set $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version
-				wp_initial_constants()
-					DEFINE ...
-				timer_start()
-					global $timestart
-				if WP_CACHE
-					include WP_CONTENT_DIR . /advanced-cache.php
-				require ABSPATH . WPINC . /compat.php
-				require ABSPATH . WPINC . /functions.php
-					require ABSPATH . WPINC . /option.php
-				require ABSPATH . WPINC . /class-wp.php | WP class (not instantiated)
-				require ABSPATH . WPINC . /class-wp-error.php | WP Error (not instantiated)
-				require ABSPATH . WPINC . /plugin.php
-					global $wp_filter, $wp_actions, $merged_filters, $wp_current_filter
-				require ABSPATH . WPINC . /pomo/mo.php
-					require ABSPATH . WPINC . /pomo/translations.php
-						require ABSPATH . WPINC . /pomo/entry.php | Translation_Entry
-					require ABSPATH . WPINC . /pomo/streams.php
-				require_wp_db()
-					require ABSPATH . WPINC . /wp-db.php
-					if file_exists WP_CONTENT_DIR . /db.php
-						require WP_CONTENT_DIR . /db.php
-					$wpdb = new wpdb()
-				wp_start_object_cache()
-				require ABSPATH . WPINC . /default-filters.php
+ * /index.php
+ * require . /wp-blog-header.php
+	* require . /wp-load.php
+		* define ABSPATH
+		* require ABSPATH . wp-config.php | or one dir up
+			* define DB, MULTISITE, SUBDOMAIN_INSTALL, 
+			* require ABSPATH . wp-settings.php
+				* define WPINC | wp-includes
+				* require ABSPATH . WPINC . /load.php | loads functions
+				* require ABSPATH . WPINC . /default-constants.php | loads functions
+				* global $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version
+				* require ABSPATH . WPINC . /version.php
+					* set $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version
+				* wp_initial_constants()
+					* DEFINE ...
+				* timer_start()
+					* global $timestart
+				* if WP_CACHE
+					* include WP_CONTENT_DIR . /advanced-cache.php
+				* require ABSPATH . WPINC . /compat.php
+				* require ABSPATH . WPINC . /functions.php
+					* require ABSPATH . WPINC . /option.php
+				* require ABSPATH . WPINC . /class-wp.php | WP class (not instantiated)
+				* require ABSPATH . WPINC . /class-wp-error.php | WP Error (not instantiated)
+				* require ABSPATH . WPINC . /plugin.php
+					* global $wp_filter, $wp_actions, $merged_filters, $wp_current_filter
+				* require ABSPATH . WPINC . /pomo/mo.php
+					* require ABSPATH . WPINC . /pomo/translations.php
+						* require ABSPATH . WPINC . /pomo/entry.php | Translation_Entry
+					* require ABSPATH . WPINC . /pomo/streams.php
+				* require_wp_db()
+					* require ABSPATH . WPINC . /wp-db.php
+					* if file_exists WP_CONTENT_DIR . /db.php
+						* require WP_CONTENT_DIR . /db.php
+					* $wpdb = new wpdb()
+				* wp_start_object_cache()
+				* require ABSPATH . WPINC . /default-filters.php
 
-Multisite bootstrap begins here
-
+Multisite bootstrap begins here:
 				if MULTISITE | SUBDOMAIN_INSTALL | VHOST | SUNRISE
 					require ABSPATH . WPINC . /ms-blogs.php
 					require ABSPATH . WPINC . /ms-settings.php
