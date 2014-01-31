@@ -270,3 +270,15 @@ If we do come out of the site finding process with a valid `$current_blog` objec
 And continue on with loading WordPress.
 
 * `wp();`
+
+## Notes / Thoughts
+
+1. Deprecate `wpmu_current_site()`, replace with `wp_set_current_network()` or something similar.
+1. Use `wp_set_current_network()` to handle the network finding process.
+1. Move site finding logic from `ms-settings.php` to `wp_set_current_site()` or something similar.
+1. Move logic for extracting path and domain into something - `wp_parse_request()` or something?
+1. Unit tests for `wp_parse_request()`
+1. Unit tests for `wp_set_current_network()`
+1. Unit tests for `wp_set_current_site()`
+1. Start changing behavior toward accepting more arbitrary domains, etc.
+
