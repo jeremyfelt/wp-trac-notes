@@ -1,6 +1,8 @@
 # Multisite Bootstrap - 3.8.1
 
-Standard bootstrap process
+# Standard Bootstrap
+
+Before we get to the multisite area of core, we load several things into place. This means that general functions, globals, filters, drop-ins, and translations are available to the multisite boot process.
 
  * `/index.php`
  * `. /wp-blog-header.php`
@@ -37,6 +39,8 @@ Standard bootstrap process
 				* `wp_start_object_cache()`
 				* `ABSPATH . WPINC . /default-filters.php`
 
+## Multisite Bootstrap
+
 Multisite bootstrap begins here, continuing under the load of `ABSPATH . wp-settings.php` if `MULTISITE`, `SUBDOMAIN_INSTALL`, `VHOST`, or `SUNRISE` are truthy.
 
 * `ABSPATH . WPINC . /ms-blogs.php`
@@ -62,7 +66,7 @@ Most of this process is skipped if `$current_site` and `$current_blog` are setup
 
 In this first block, we try to capture the intended domain and path so that we can match them with a network and a site. If a port number is attached to the domain, we strip it out. Of course, if the port is non "standard", we report an error. We strip any `www` so that we can set the cookie domain properly. We remove any `wp-admin` instances. We capture only the first `/path/` for the network lookup.
 
-## Finding the Network
+### Finding the Network
 
 A process to set the `$current_site` global is triggered in `wpmu_current_site()`:
 
@@ -170,7 +174,7 @@ And if we can't find a network with the requested information, we die with an er
 
 * `wp_die()`
 
-## Finding the Site
+### Finding the Site
 
 And `$current_site` has been established through `wpmu_current_site()`. Time to figure out `$current_blog`.
 
