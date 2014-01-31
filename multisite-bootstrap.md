@@ -1,6 +1,6 @@
 # Multisite Bootstrap - 3.8.1
 
-# Standard Bootstrap
+## Standard Bootstrap
 
 Before we get to the multisite area of core, we load several things into place. This means that general functions, globals, filters, drop-ins, and translations are available to the multisite boot process.
 
