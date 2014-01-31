@@ -41,7 +41,7 @@ Before we get to the multisite area of core, we load several things into place. 
 
 ## Multisite Bootstrap
 
-Multisite bootstrap begins here, continuing under the load of `ABSPATH . wp-settings.php` if `MULTISITE`, `SUBDOMAIN_INSTALL`, `VHOST`, or `SUNRISE` are truthy.
+Multisite bootstrap begins here, continuing under the load of `ABSPATH . wp-settings.php` if `MULTISITE`, `SUBDOMAIN_INSTALL`, `VHOST`, or `SUNRISE` are around.
 
 * `ABSPATH . WPINC . /ms-blogs.php`
 * `ABSPATH . WPINC . /ms-settings.php`
