@@ -1,5 +1,9 @@
-/index.php
-require . /wp-blog-header.php
+# Multisite Bootstrap - 3.8.1
+
+Standard bootstrap process
+
+ /index.php
+ require . /wp-blog-header.php
 	require . /wp-load.php
 		define ABSPATH
 		require ABSPATH . wp-config.php | or one dir up
@@ -35,6 +39,9 @@ require . /wp-blog-header.php
 					$wpdb = new wpdb()
 				wp_start_object_cache()
 				require ABSPATH . WPINC . /default-filters.php
+
+Multisite bootstrap begins here
+
 				if MULTISITE | SUBDOMAIN_INSTALL | VHOST | SUNRISE
 					require ABSPATH . WPINC . /ms-blogs.php
 					require ABSPATH . WPINC . /ms-settings.php
