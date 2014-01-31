@@ -185,28 +185,44 @@ This check for `blog_id` is really only to set the primary site for the network 
 
 * if `is_subdomain_install()`
 	* `$current_blog = wp_cache_get current_blog_$domain site-options`
-	* if ! $current_blog
-		* $current_blog = get_blog_details domain = $domain
-		* if $current_blog
+	* if ! `$current_blog`
+		* `$current_blog` = get_blog_details domain = $domain
+		* if `$current_blog`
 			* wp_cache_set current_blog_domain $current_blog site-options
-	* if $current_blog && $current_blog->site_id != $current_site->id
-		* $current_site = $wpdb->site WHERE id = $current_blog->site_id
-		* if ! isset $current_site->blog_id
-			* $current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
+	* if `$current_blog && $current_blog->site_id != $current_site->id`
+		* `$current_site = $wpdb->site WHERE id = $current_blog->site_id`
+		* if ! `isset $current_site->blog_id`
+			* `$current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path`
 	* else
-		* $blogname = strip first sub from $domain
+		* `$blogname` = strip first sub from $domain
+
+If this is a subdomain install, try to grab our site information from cache first, using a domain specific cache key.
+
+If nothing is available in cache, use `get_blog_details()` to lookup the site by domain. This initiates a lookup in the `$wpdb->blogs` table using only the domain, no path. If prefixed with `www.`, that is stripped in the lookup similar to how the network is found. It's a little strange that we're considering that possibility at this point, though I haven't fully thought that out.
+
 * else
-	* $blogname = stripped version of $path
-	* $blogname = strip /
-	* $blogname = strip ?query_vars=after
-	* $reserved_blognames = page, comments, blog, wp-admin, wp-includes, wp-content, files, feed
-	* if $blogname is not empty and is not a reserved name and is not a file
+	* `$blogname` = stripped version of `$path`
+	* `$blogname` = strip /
+	* `$blogname` = strip ?query_vars=after
+	* `$reserved_blognames` = page, comments, blog, wp-admin, wp-includes, wp-content, files, feed
+	* if `$blogname` is not empty and is not a reserved name and is not a file
 		* `$path .= $blogname . /`
 	* `$current_blog = wp_cache_get( 'current_blog_' . $domain . $path, 'site-options' );
 	* if ! `$current_blog1
 		* `$current_blog = get_blog_details( array( 'domain' => $domain, 'path' => $path ), false );`
 		* if `$current_blog`, cache as `current_blog_$domain . $path` key
 	* unset `$reserved_blognames
+
+If this isn't a subdomain install, then we're looking for a specific path. The site name (`$blogname`) used to lookup this path consists of everything in the first path section after the network's path.
+
+* `http://network1.com/common/site1/` matches `site1` as the `$blogname` when the network's `$path` is `common`
+
+If the name isn't reserved, empty, or an actual file, we add it to the path to perform a lookup in cache and then via `get_blog_details()`. This time the query is done based on `$domain` and `$path`.
+
+* From the example just above, SELECT sites where `domain = network1.com` and `path = common/site1/`
+
+We continue.
+
 * if ! `WP_INSTALLING` and `is_subdomain_install()` and ! `is_object( $current_blog )`
 	* if `NOBLOGREDIRECT`
 		* `$destination = NOBLOGREDIRECT`
@@ -215,17 +231,25 @@ This check for `blog_id` is really only to set the primary site for the network 
 	* else
 		* $destination = 'http://' . $current_site->domain . $current_site->path . 'wp-signup.php?new=' . str_replace( '.' . $current_site->domain, '', $domain );
 	* redirect to `$destination`
+
+If we haven't found a site yet, and this is a subdomain install, *and* we're not going through installation, we decide to redirect the request. If a `NOBLOGREDIRECT` destination has been defined in `wp-config.php`, we route it there. If one is not defined, we route to the current network's signup location on the primary site.
+
 * if ! `WP_INSTALLING`
-	* if `$current_site` and `! $current_blog`
+	* if `$current_site && ! $current_blog`
 		* if `$current_site->domain != $_SERVER['HTTP_HOST']`
 			* `header( 'Location: http://' . $current_site->domain . $current_site->path );`
 		* `$current_blog = get_blog_details( array( 'domain' => $current_site->domain, 'path' => $current_site->path ), false );`
 	* if `! $current_blog || ! $current_site`
 		* `ms_not_installed()`
 
+If we've reached this point, we're a subfolder network in multisite, we're not installing WordPress, and we haven't been able to find a matching site on the network yet. In this case, if the current site's domain doesn't match the originally requested domain (weird), we redirect to the primary site on that network. If it does match the requested domain, then we look up the primary site's information for the network and continue.
+
+If no site and no network is found, we decide that multisite is not actually installed.
+
+If we do come out of the site finding process with a valid `$current_blog` object, we continue setting a few of the important pieces of multisite.
+
 * `$blog_id = $current_blog->blog_id;`
 * `$public  = $current_blog->public;`
-
 * if `empty( $current_blog->site_id )`
 	* `$current_blog->site_id = 1;`
 * `$site_id = $current_blog->site_id;`
@@ -235,7 +259,6 @@ This check for `blog_id` is really only to set the primary site for the network 
 		* `$current_blog->blog_id = $blog_id = 1;`
 	* else
 		`wp_die()`
-
 * `$wpdb->set_prefix( $table_prefix, false );`
 * `$wpdb->set_blog_id( $current_blog->blog_id, $current_blog->site_id );`
 * `$table_prefix = $wpdb->get_blog_prefix();`
