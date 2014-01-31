@@ -49,16 +49,16 @@ Multisite bootstrap begins here, continuing under the load of `ABSPATH . wp-sett
 
 Much of the following sections is skipped if `$current_site` and `$current_blog` are setup properly by `sunrise.php`.
 
-	* if `! isset $current_site || ! isset $current_blog`
-		* `$domain = SERVER['HTTP_HOST']`
-		* `$domain` = strip ports 80, 443 | report error if other port (???)
-		* `$domain`= rtrim .
-		* `$cookie_domain = $domain`
-		* `$cookie_domain = strip www.`
-		* `$path = SERVER['REQUEST_URI']` | preg_replace php
-		* `$path` = str_replace wp-admin
-		* `$path` = preg_replace after first /path/ entry of URI
-		* `$current_site = wpmu_current_site()`
+* if `! isset $current_site || ! isset $current_blog`
+	* `$domain = SERVER['HTTP_HOST']`
+	* `$domain` = strip ports 80, 443 | report error if other port (???)
+	* `$domain`= rtrim .
+	* `$cookie_domain = $domain`
+	* `$cookie_domain = strip www.`
+	* `$path = SERVER['REQUEST_URI']` | preg_replace php
+	* `$path` = str_replace wp-admin
+	* `$path` = preg_replace after first /path/ entry of URI
+	* `$current_site = wpmu_current_site()`
 
 A process to set the `$current_site` global is triggered in `wpmu_current_site()`:
 
