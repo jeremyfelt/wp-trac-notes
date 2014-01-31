@@ -13,10 +13,8 @@ Standard bootstrap process
 				* `ABSPATH . WPINC . /load.php`
 				* `ABSPATH . WPINC . /default-constants.php`
 				* `global $wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version`
-				* `ABSPATH . WPINC . /version.php`
-					* set `$wp_version, $wp_db_version, $tinymce_version, $required_php_version, $required_mysql_version`
-				* `wp_initial_constants()`
-					* defines initial constants
+				* `ABSPATH . WPINC . /version.php` sets version globals
+				* `wp_initial_constants()` defines initial constants
 				* `timer_start()` sets up the global `$timestart`
 				* if `WP_CACHE`, include the advanced cache drop-in
 					* `WP_CONTENT_DIR . /advanced-cache.php`
