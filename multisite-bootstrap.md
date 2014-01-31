@@ -62,82 +62,85 @@ Much of the following sections is skipped if `$current_site` and `$current_blog`
 
 A process to set the `$current_site` global is triggered in `wpmu_current_site()`:
 
-				if defined DOMAIN_CURRENT_SITE && PATH_CURRENT_SITE
-					$current_site->id = SITE_ID_CURRENT_SITE or 1
-					$current_site->domain = DOMAIN_CURRENT_SITE
-					$current_site->path = $path = PATH_CURRENT_SITE
-					if defined BLOG_ID_CURRENT_SITE
-						$current_site->blog_id = BLOG_ID_CURRENT_SITE
-					if defined BLOGID_CURRENT_SITE | deprecated
-						$current_site->blog_id = BLOGID_CURRENT_SITE
-					if DOMAIN_CURRENT_SITE == $domain
-						$current_site->cookie_domain = $cooke_domain
-						else
-							$current_site->cookie_domain = $current_site->domain | strip www.
-					return
-				if $current_site = wp_cache_get( 'current_site', 'site-options' );
-					return
-				$sites = SELECT * FROM $wpdb->site
-				if 1 == count $sites
-					$current_site = $sites[0]
-					$path = $current_site->path
-					$current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
-					$current_site = get_current_site_name( $current_site )
-						$current_site->site_name = wp_cache_get
-						if ! $current_site->site_name
-							$current_site->site_name = meta_value FROM $wpdb-sitemeta WHERE site_id = $current_site->id AND meta_key = 'site_name'
-							if ! $current_site->site_name
-								$current_site->site_name = ucfirst $current_site->domain
-					if www . $current_site_domain
-						$current_site->cookie_domain = strip www. from $current_site->domain
-					return
-				$path = first path of $_SERVER['REQUEST_URI']
-				if $domain == $cookie_domain
-					$current_site = $wpdb->site WHERE domain = $domain AND path = $path
-					else
-						$current_site = $wpdb->site WHERE domain In ( $domain, $cookie_domain ) AND path = $path
-				if ! $current_site
-					if $domain == $current_domain
-						$current_site = $wpdb->site WHERE domain = $domain AND path = /
-						else
-							$wpdb->site WHERE domain IN ( $domain, $cookie_domain ) AND path = '/'
-				if $current_site
-					$path = $current_site->path
-					$current_site->cookie_domain = $cookie_domain
-					return
-				if is_subdomain_install
-					$sitedomain = strip $domain of first foo.
-					$current_site = SELECT * FROM $wpdb->site WHERE domain = $sitedomain AND path = $path
-					if $current_site
-						$current_site->cookie_domain = $current_site->domain
-						return
-					$current_site = SELECT * FROM $wpdb->site WHERE domain = $sitedomain AND path = /
-				if $current_site || defined WP_INSTALLING
-					$path = /
-					return
-				wp_die()
-			### $current_site established ###
-			if ! isset $current_site->blog_id
-				$current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
-			if is_subdomain_install()
-				$current_blog = wp_cache_get current_blog_$domain site-options
-				if ! $current_blog
-					$current_blog = get_blog_details domain = $domain
-					if $current_blog
-						wp_cache_set current_blog_domain $current_blog site-options
-				if $current_blog && $current_blog->site_id != $current_site->id
-					$current_site = $wpdb->site WHERE id = $current_blog->site_id
-					if ! isset $current_site->blog_id
-						$current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
-				else
-					$blogname = strip first sub from $domain
-			else
-				$blogname = stripped version of $path
-				$blogname = strip /
-				$blogname = strip ?query_vars=after
-				$reserved_blognames = page, comments, blog, wp-admin, wp-includes, wp-content, files, feed
-				if $blogname
+* if defined DOMAIN_CURRENT_SITE && PATH_CURRENT_SITE
+	* $current_site->id = SITE_ID_CURRENT_SITE or 1
+	* $current_site->domain = DOMAIN_CURRENT_SITE
+	* $current_site->path = $path = PATH_CURRENT_SITE
+	* if defined BLOG_ID_CURRENT_SITE
+		* $current_site->blog_id = BLOG_ID_CURRENT_SITE
+	* if defined BLOGID_CURRENT_SITE | deprecated
+		* $current_site->blog_id = BLOGID_CURRENT_SITE
+	* if DOMAIN_CURRENT_SITE == $domain
+		* $current_site->cookie_domain = $cooke_domain
+		* else
+			* $current_site->cookie_domain = $current_site->domain | strip www.
+	* return
+* if $current_site = wp_cache_get( 'current_site', 'site-options' );
+	* return
+* $sites = SELECT * FROM $wpdb->site
+* if 1 == count $sites
+	* $current_site = $sites[0]
+	* $path = $current_site->path
+	* $current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
+	* $current_site = get_current_site_name( $current_site )
+		* $current_site->site_name = wp_cache_get
+		* if ! $current_site->site_name
+			* $current_site->site_name = meta_value FROM $wpdb-sitemeta WHERE site_id = $current_site->id AND meta_key = 'site_name'
+			* if ! $current_site->site_name
+				* $current_site->site_name = ucfirst $current_site->domain
+	* if www . $current_site_domain
+		* $current_site->cookie_domain = strip www. from $current_site->domain
+	* return
+* $path = first path of $_SERVER['REQUEST_URI']
+* if $domain == $cookie_domain
+	* $current_site = $wpdb->site WHERE domain = $domain AND path = $path
+	* else
+		* $current_site = $wpdb->site WHERE domain In ( $domain, $cookie_domain ) AND path = $path
+* if ! $current_site
+	* if $domain == $current_domain
+		* $current_site = $wpdb->site WHERE domain = $domain AND path = /
+		* else
+			* $wpdb->site WHERE domain IN ( $domain, $cookie_domain ) AND path = '/'
+* if $current_site
+	* $path = $current_site->path
+	* $current_site->cookie_domain = $cookie_domain
+	* return
+* if is_subdomain_install
+	* $sitedomain = strip $domain of first foo.
+	* $current_site = SELECT * FROM $wpdb->site WHERE domain = $sitedomain AND path = $path
+	* if $current_site
+		* $current_site->cookie_domain = $current_site->domain
+		* return
+	* $current_site = SELECT * FROM $wpdb->site WHERE domain = $sitedomain AND path = /
+* if $current_site || defined WP_INSTALLING
+	* $path = /
+	* return
+* wp_die()
 
+And `$current_site` has been established through `wpmu_current_site()`. Time to figure out `$current_blog`.
+
+* if ! isset $current_site->blog_id
+	* $current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
+* if is_subdomain_install()
+	* $current_blog = wp_cache_get current_blog_$domain site-options
+	* if ! $current_blog
+		* $current_blog = get_blog_details domain = $domain
+		* if $current_blog
+			* wp_cache_set current_blog_domain $current_blog site-options
+	* if $current_blog && $current_blog->site_id != $current_site->id
+		* $current_site = $wpdb->site WHERE id = $current_blog->site_id
+		* if ! isset $current_site->blog_id
+			* $current_site->blog_id = $wpdb->blogs WHERE domain = $current_site->domain AND path = $current_site->path
+	* else
+		* $blogname = strip first sub from $domain
+* else
+	* $blogname = stripped version of $path
+	* $blogname = strip /
+	* $blogname = strip ?query_vars=after
+	* $reserved_blognames = page, comments, blog, wp-admin, wp-includes, wp-content, files, feed
+	* if $blogname
+
+Still processing
 
 	if ( is_subdomain_install() ) {
 		$current_blog = wp_cache_get( 'current_blog_' . $domain, 'site-options' );
